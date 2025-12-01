@@ -1,53 +1,454 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exerrdev | Full-Stack Developer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0d0d0d;
-      color: #ffffff;
-      text-align: center;
-      padding: 80px 20px;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #4da3ff;
-    }
-    h2 {
-      color: #999;
-      font-weight: normal;
-    }
-    .links {
-      margin-top: 40px;
-    }
-    a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      color: white;
-      background: #4da3ff;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.25s;
-    }
-    a:hover {
-      background: #1f6fd4;
-    }
-  </style>
-</head>
-<body>
-  <h1>Exerrdev</h1>
-  <h2>Full-Stack Developer | SvelteKit · NestJS · PostgreSQL</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <title>exerrdev | Portfolio</title>
+    <meta
+      name="description"
+      content="Portafolio de exerrdev: desarrollo backend, APIs robustas, ciberseguridad Blue Team y soluciones web modernas."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <div class="links">
-    <a href="https://github.com/Exerrdev" target="_blank">GitHub</a>
-    <a href="https://exerrdev.github.io" target="_blank">Portfolio</a>
-    <a href="mailto:jaimesh.dev@gmail.com">Contacto</a>
-  </div>
-</body>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-950 text-slate-50">
+    <!-- NAVBAR -->
+    <header
+      class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur"
+    >
+      <div
+        class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3"
+      >
+        <a href="#inicio" class="flex items-center gap-2">
+          <div
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400 font-bold"
+          >
+            e
+          </div>
+          <span class="text-lg font-semibold tracking-tight">exerrdev</span>
+        </a>
+
+        <nav class="hidden gap-6 text-sm md:flex">
+          <a href="#sobre-mi" class="hover:text-indigo-400">Sobre mí</a>
+          <a href="#servicios" class="hover:text-indigo-400">Servicios</a>
+          <a href="#proyectos" class="hover:text-indigo-400">Proyectos</a>
+          <a href="#proceso" class="hover:text-indigo-400">Proceso</a>
+          <a href="#contacto" class="hover:text-indigo-400">Contacto</a>
+        </nav>
+
+        <a
+          href="#contacto"
+          class="hidden rounded-full bg-indigo-500 px-4 py-2 text-sm font-medium shadow-md hover:bg-indigo-400 md:inline-block"
+        >
+          Hablemos
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      id="inicio"
+      class="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+    >
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,70,229,0.35),_transparent_60%),_radial-gradient(circle_at_bottom,_rgba(45,212,191,0.18),_transparent_55%)]"
+      ></div>
+
+      <div
+        class="relative mx-auto flex max-w-6xl flex-col-reverse items-center px-4 py-20 lg:flex-row lg:justify-between lg:py-24"
+      >
+        <div class="max-w-xl space-y-6 text-center lg:text-left">
+          <p
+            class="text-xs font-medium uppercase tracking-[0.25em] text-indigo-400"
+          >
+            Desarrollador Backend & Web – Blue Team
+          </p>
+          <h1 class="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Soluciones web diseñadas para
+            <span
+              class="bg-gradient-to-r from-indigo-400 to-cyan-300 bg-clip-text text-transparent"
+            >
+              crecer contigo.
+            </span>
+          </h1>
+          <p class="text-sm text-slate-300 sm:text-base">
+            Construyo APIs robustas, backends escalables y frontends modernos.
+            Me estoy especializando también en ciberseguridad con foco en Blue
+            Team: monitoreo, prevención de incidentes y fortalecimiento de
+            infraestructuras.
+          </p>
+
+          <div
+            class="flex flex-col items-center gap-3 sm:flex-row lg:justify-start"
+          >
+            <a
+              href="#proyectos"
+              class="w-full rounded-full bg-indigo-500 px-6 py-2.5 text-center text-sm font-medium shadow-lg hover:bg-indigo-400 sm:w-auto"
+            >
+              Ver proyectos
+            </a>
+            <a
+              href="#sobre-mi"
+              class="w-full rounded-full border border-slate-600 px-6 py-2.5 text-center text-sm font-medium text-slate-100 hover:border-indigo-400 hover:text-indigo-300 sm:w-auto"
+            >
+              Conocer más de mí
+            </a>
+          </div>
+
+          <div
+            class="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 lg:justify-start"
+          >
+            <span class="rounded-full border border-slate-700 px-3 py-1">
+              NestJS • PostgreSQL • TypeORM
+            </span>
+            <span class="rounded-full border border-slate-700 px-3 py-1">
+              SvelteKit • TailwindCSS
+            </span>
+            <span class="rounded-full border border-slate-700 px-3 py-1">
+              Blue Team • Seguridad Defensiva
+            </span>
+          </div>
+        </div>
+
+        <div class="mb-10 w-full max-w-md lg:mb-0">
+          <div
+            class="card rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-xl"
+          >
+            <p
+              class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400"
+            >
+              Tech Stack
+            </p>
+            <div class="grid grid-cols-2 gap-3 text-sm">
+              <div class="rounded-2xl bg-slate-800/70 p-3">
+                <p class="text-xs text-slate-400">Backend</p>
+                <p class="font-medium">NestJS, Node.js</p>
+              </div>
+              <div class="rounded-2xl bg-slate-800/70 p-3">
+                <p class="text-xs text-slate-400">Base de datos</p>
+                <p class="font-medium">PostgreSQL</p>
+              </div>
+              <div class="rounded-2xl bg-slate-800/70 p-3">
+                <p class="text-xs text-slate-400">Frontend</p>
+                <p class="font-medium">SvelteKit</p>
+              </div>
+              <div class="rounded-2xl bg-slate-800/70 p-3">
+                <p class="text-xs text-slate-400">Seguridad</p>
+                <p class="font-medium">Blue Team Basics</p>
+              </div>
+            </div>
+            <p class="mt-4 text-xs text-slate-400">
+              Actualmente construyendo
+              <span class="font-semibold">MangaNoStore</span>, plataforma
+              completa de e-commerce con APIs separadas, pasarela de pago y
+              almacenamiento distribuido.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="border-b border-slate-800 bg-slate-950">
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <h2 class="text-2xl font-semibold">Sobre mí</h2>
+          <span class="text-xs uppercase tracking-[0.25em] text-slate-500"
+            >Perfil</span
+          >
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-[2fr,1.3fr]">
+          <div class="space-y-4 text-sm text-slate-300">
+            <p>
+              Hola, soy <span class="font-semibold">exerrdev</span>,
+              desarrollador con foco en backend, fullstack y ciberseguridad. Me
+              gusta construir proyectos que realmente funcionen en producción,
+              no solo maquetas.
+            </p>
+            <p>
+              Trabajo con arquitecturas separadas en frontend, API de consumo,
+              API de CRUD y base de datos, priorizando escalabilidad, seguridad
+              y claridad en el código. Además, actualmente estoy profundizando
+              en ciberseguridad orientada al Blue Team: monitoreo, detección de
+              incidentes, análisis forense básico y fortalecimiento de
+              infraestructuras.
+            </p>
+            <p>
+              Mi objetivo es seguir creciendo profesionalmente como
+              desarrollador y al mismo tiempo avanzar en el área defensiva de
+              seguridad, aplicando buenas prácticas dentro de entornos reales.
+            </p>
+          </div>
+
+          <div class="space-y-3 text-sm">
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4"
+            >
+              <p class="text-xs text-slate-400">En qué me enfoco</p>
+              <ul class="mt-2 list-disc space-y-1 pl-4">
+                <li>Código mantenible y legible</li>
+                <li>Buenas prácticas en backend y DB</li>
+                <li>Fundamentos y herramientas del Blue Team</li>
+                <li>Experiencias pensadas para el usuario final</li>
+              </ul>
+            </div>
+
+            <div
+              class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4"
+            >
+              <p class="text-xs text-slate-400">Buscando</p>
+              <p class="mt-1">
+                Oportunidades en desarrollo web, backend y roles iniciales en
+                ciberseguridad defensiva (Blue Team). También abierto a
+                colaboraciones freelance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="border-b border-slate-800 bg-slate-950">
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <div class="mb-8 flex items-center justify-between gap-4">
+          <h2 class="text-2xl font-semibold">Lo que hago</h2>
+          <span class="text-xs uppercase tracking-[0.25em] text-slate-500"
+            >Servicios</span
+          >
+        </div>
+
+        <!-- GRID DE 4 COLUMNAS -->
+        <div class="grid gap-6 md:grid-cols-4">
+          <article
+            class="card rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow"
+          >
+            <p class="text-xs font-semibold uppercase text-indigo-400">
+              Backend
+            </p>
+            <h3 class="mt-2 text-sm font-semibold">
+              APIs REST seguras y escalables
+            </h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Desarrollo de APIs con NestJS, validación, autenticación,
+              autorización, manejo de errores y buenas prácticas.
+            </p>
+          </article>
+
+          <article
+            class="card rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow"
+          >
+            <p class="text-xs font-semibold uppercase text-indigo-400">
+              Bases de Datos
+            </p>
+            <h3 class="mt-2 text-sm font-semibold">
+              Modelado y consultas eficientes
+            </h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Modelado relacional, migraciones, optimización de consultas y
+              consistencia de datos con PostgreSQL.
+            </p>
+          </article>
+
+          <article
+            class="card rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow"
+          >
+            <p class="text-xs font-semibold uppercase text-indigo-400">
+              Frontend
+            </p>
+            <h3 class="mt-2 text-sm font-semibold">
+              Interfaces modernas y responsivas
+            </h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Desarrollo de interfaces limpias, rápidas y móviles usando
+              SvelteKit y TailwindCSS.
+            </p>
+          </article>
+
+          <!-- NUEVO SERVICIO BLUE TEAM -->
+          <article
+            class="card rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow"
+          >
+            <p class="text-xs font-semibold uppercase text-indigo-400">
+              Ciberseguridad (Blue Team)
+            </p>
+            <h3 class="mt-2 text-sm font-semibold">
+              Defensa, monitoreo y hardening
+            </h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Formación y práctica en seguridad defensiva: monitoreo de
+              amenazas, análisis básico de incidentes, hardening y prevención de
+              fallos comunes. Enfoque aplicado a proyectos reales.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="border-b border-slate-800 bg-slate-950">
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <div class="mb-8 flex items-center justify-between gap-4">
+          <h2 class="text-2xl font-semibold">Proyectos destacados</h2>
+          <span class="text-xs uppercase tracking-[0.25em] text-slate-500"
+            >Portfolio</span
+          >
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <article
+            class="card flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow"
+          >
+            <p class="text-xs font-semibold uppercase text-indigo-400">
+              E-commerce
+            </p>
+            <h3 class="mt-2 text-sm font-semibold">MangaNoStore</h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Plataforma completa de venta de mangas con arquitectura separada:
+              frontend SvelteKit, API de consumo, API CRUD con NestJS y
+              PostgreSQL, integración con MercadoPago y almacenamiento en R2.
+            </p>
+            <p class="mt-2 text-[11px] text-slate-400">
+              Stack: SvelteKit, NestJS, TypeORM, PostgreSQL, Cloudflare R2,
+              MercadoPago.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <a
+                href="#"
+                class="rounded-full border border-slate-700 px-3 py-1 hover:border-indigo-400 hover:text-indigo-300"
+                >Repositorio</a
+              >
+              <a
+                href="#"
+                class="rounded-full border border-slate-700 px-3 py-1 hover:border-indigo-400 hover:text-indigo-300"
+                >Demo</a
+              >
+            </div>
+          </article>
+
+          <article
+            class="card flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow"
+          >
+            <p class="text-xs font-semibold uppercase text-indigo-400">
+              Seguridad
+            </p>
+            <h3 class="mt-2 text-sm font-semibold">Laboratorio Blue Team</h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Laboratorio personal en Kali + Metasploitable2 para practicar
+              monitoreo, identificación de ataques, logs, SQLi, DoS y medidas de
+              mitigación. Todo documentado.
+            </p>
+            <p class="mt-2 text-[11px] text-slate-400">
+              Stack: Kali Linux, Wireshark, Logs, Linux, Redes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="border-b border-slate-800 bg-slate-950">
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <div class="mb-8 flex items-center justify-between gap-4">
+          <h2 class="text-2xl font-semibold">Cómo trabajo</h2>
+          <span class="text-xs uppercase tracking-[0.25em] text-slate-500"
+            >Proceso</span
+          >
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <p class="text-xs font-semibold text-slate-400">Paso 1</p>
+            <h3 class="mt-1 text-sm font-semibold">Descubrir</h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Entiendo la necesidad del proyecto, sus objetivos y el contexto
+              donde se va a implementar.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <p class="text-xs font-semibold text-slate-400">Paso 2</p>
+            <h3 class="mt-1 text-sm font-semibold">Diseñar</h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Defino arquitectura, tecnologías y estructura de datos pensando en
+              escalabilidad y seguridad desde el inicio.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+            <p class="text-xs font-semibold text-slate-400">Paso 3</p>
+            <h3 class="mt-1 text-sm font-semibold">Implementar</h3>
+            <p class="mt-2 text-xs text-slate-300">
+              Desarrollo, pruebo y documento la solución. Aplico medidas de
+              seguridad defensiva (Blue Team) para endurecer servicios antes de
+              producción: hardening, validaciones y monitoreo básico.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="border-b border-slate-800 bg-slate-950">
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <div class="mb-6 text-center">
+          <p
+            class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500"
+          >
+            Contacto
+          </p>
+          <h2 class="mt-2 text-2xl font-semibold">
+            Todo gran proyecto empieza con una conversación.
+          </h2>
+          <p class="mt-3 text-sm text-slate-300">
+            Si quieres revisar tu idea, tu backend o un proyecto completo,
+            puedes escribirme.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 text-sm">
+          <a
+            href="mailto:TU-CORREO@ejemplo.com"
+            class="rounded-full bg-indigo-500 px-6 py-2 font-medium hover:bg-indigo-400"
+            >Enviarme un correo</a
+          >
+          <a
+            href="https://github.com"
+            class="rounded-full border border-slate-700 px-6 py-2 hover:border-indigo-400 hover:text-indigo-300"
+            >GitHub</a
+          >
+          <a
+            href="#"
+            class="rounded-full border border-slate-700 px-6 py-2 hover:border-indigo-400 hover:text-indigo-300"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 pb-8 pt-6 text-center text-xs text-slate-500">
+      <p>© <span id="year"></span> exerrdev. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
