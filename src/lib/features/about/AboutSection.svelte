@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { Terminal, FolderOpen } from 'lucide-svelte';
+  
+    import { Terminal, FolderOpen, ShieldCheck } from 'lucide-svelte';
 
     const stats = [
         { key: "OS", value: "ExerrDev OS 2026.03", color: "text-blue-400" },
@@ -8,6 +9,16 @@
         { key: "Shell", value: "SvelteKit + NestJS", color: "text-yellow-400" },
         { key: "Resolution", value: "Hexagonal Architecture", color: "text-pink-500" },
         { key: "WM", value: "TailwindCSS", color: "text-purple-400" }
+    ];
+
+    
+    const techStack = [
+        { name: "NestJS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg" },
+        { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+        { name: "SvelteKit", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg" },
+        { name: "Angular", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg" },
+        { name: "PostgreSQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },     
+        { name: "CyberSec", icon: ShieldCheck, color: "text-purple-400" }
     ];
 </script>
 
@@ -26,36 +37,33 @@
         <div class="grid lg:grid-cols-12 gap-12 items-start">
             
             <div class="lg:col-span-5">
-                <div class="aspect-[4/5] bg-[#11121d] border border-slate-800 rounded-lg flex flex-col items-center justify-center p-8 relative overflow-hidden group">
+                <div class="bg-[#11121d] border border-slate-800 rounded-lg flex flex-col items-center justify-start p-6 relative overflow-hidden group">
                     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 20px 20px;"></div>
                     
-                    <div class="relative z-10 text-cyan-500 opacity-80 group-hover:opacity-100 transition-opacity">
-                        <pre class="text-[9px] sm:text-[10px] leading-tight">
+                    <div class="relative z-10 text-cyan-500 opacity-80 group-hover:opacity-100 transition-opacity w-full flex flex-col items-center">
+                        <pre class="text-[7px] sm:text-[8px] leading-tight mb-2">
 {`      
      .ndMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMnd.
    .dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd.
   .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM.
   MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
-  MMMMMMMMMMMMMMM"   "MMMMMMMMMMMM"   "MMMMMMMMMMMMM
-  MMMMMMMMMMMMMM       MMMMMMMMMM       MMMMMMMMMMMM
-  MMMMMMMMMMMMMM       MMMMMMMMMM       MMMMMMMMMMMM
-  MMMMMMMMMMMMMM       MMMMMMMMMM       MMMMMMMMMMMM
-  MMMMMMMMMMMMMMNm...mNMMMMMMMMMMNm...mNMMMMMMMMMMMM
-  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+  MMMMMMMMMMMMMM"   "MMMMMMMMMM"   "MMMMMMMMMMMMM
+  MMMMMMMMMMMMMM       MMMMMMMM       MMMMMMMMMMMM
+  MMMMMMMMMMMMMM       MMMMMMMM       MMMMMMMMMMMM
+  MMMMMMMMMMMMMMNm...mNMMMMMMMMNm...mNMMMMMMMMMMMM
   MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
   MMMMMMMMMMMN                       NMMMMMMMMMMMMMM
-  "MMMMMMMMMMN                       NMMMMMMMMMMMM"
-   "MMMMMMMMMMN                     NMMMMMMMMMMMM"
+  "MMMMMMMMMMN                     NMMMMMMMMMMMM"
     "NMMMMMMMMMMNm...............mNMMMMMMMMMMMN"
-      "NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN"
          "NNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNN"
 `}
                         </pre>
-                        <p class="text-center mt-4 text-xs font-bold tracking-[0.2em]">[ PHOTO_NOT_FOUND ]</p>
+                        <p class="text-center text-[10px] font-bold tracking-[0.2em] mb-4">[ PHOTO_NOT_FOUND ]</p>
                     </div>
 
-                    <div class="mt-8 w-full space-y-2 z-10">
+                    <div class="w-full text-slate-700 text-xs mb-4">----------------------------------</div>
+
+                    <div class="w-full space-y-1 z-10 mb-4">
                         {#each stats as stat}
                             <div class="flex text-[11px]">
                                 <span class="{stat.color} font-bold w-20">{stat.key}:</span>
@@ -63,6 +71,40 @@
                             </div>
                         {/each}
                     </div>
+
+                    <div class="w-full text-slate-700 text-xs mb-4">----------------------------------</div>
+
+                    <div class="w-full z-10">
+                        <h3 class="text-[11px] font-bold text-slate-300 mb-4 flex items-center gap-2">
+                            <span class="text-blue-500">[#]</span> PAQUETES_INSTALADOS
+                        </h3>
+                        
+                        <div class="grid grid-cols-3 gap-x-2 gap-y-4 text-center">
+                            {#each techStack as tech}
+                                <div class="flex flex-col items-center justify-center gap-1.5 group/tech">
+                                    
+                                    {#if tech.img}
+                                        <img 
+                                            src={tech.img} 
+                                            alt={tech.name} 
+                                            class="w-6 h-6 opacity-70 grayscale group-hover/tech:grayscale-0 group-hover/tech:opacity-100 transition-all duration-300 drop-shadow-md" 
+                                        />
+                                    {:else}
+                                        <svelte:component 
+                                            this={tech.icon} 
+                                            size={24} 
+                                            class="{tech.color} opacity-70 group-hover/tech:opacity-100 transition-all duration-300"
+                                        />
+                                    {/if}
+
+                                    <span class="text-[9px] text-slate-400 group-hover/tech:text-slate-200 transition-colors">
+                                        {tech.name}
+                                    </span>
+                                </div>
+                            {/each}
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -108,10 +150,10 @@
                 </div>
 
                 <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="mailto:tu-email@ejemplo.com" class="px-6 py-2 bg-slate-200 text-[#0a0c10] font-bold text-xs uppercase hover:bg-white transition-all">
+                    <a href="#contacto" class="px-6 py-2 bg-slate-200 text-[#0a0c10] font-bold text-xs uppercase hover:bg-white transition-all">
                         [ Contactar ]
                     </a>
-                    <a href="https://linkedin.com/in/jaimesh" target="_blank" class="px-6 py-2 border border-slate-700 text-slate-300 font-bold text-xs uppercase hover:border-cyan-500 hover:text-cyan-400 transition-all">
+                    <a href="https://linkedin.com/in/jaime-sanchez-herrera" target="_blank" class="px-6 py-2 border border-slate-700 text-slate-300 font-bold text-xs uppercase hover:border-cyan-500 hover:text-cyan-400 transition-all">
                         [ LinkedIn ]
                     </a>
                 </div>
@@ -121,7 +163,6 @@
 </section>
 
 <style>
- 
     :global(section) {
         scroll-margin-top: 2rem;
     }
